@@ -44,7 +44,8 @@ builder.Services.AddAuthentication("BasicAuthentication")
     .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
 
-if (!builder.Environment.IsProduction())
+//if (!builder.Environment.IsProduction())
+//only for demo purposes
     builder.Services.AddSwagger();
 
 var app = builder.Build();
@@ -59,13 +60,16 @@ if (!app.Environment.IsProduction())
 {
     app.UseDeveloperExceptionPage();
     app.UseStatusCodePages();
-    app.UseStaticFiles();
-    app.UseSwaggerConfiguration();
+    app.UseStaticFiles(); 
 }
 else
 {
     app.UseHsts();
 }
+
+//only for demo purposes
+app.UseSwaggerConfiguration();
+
 
 app.UseCors("CorsPolicy");
 app.UseRouting();

@@ -12,6 +12,7 @@
         <RootNamespace>YlibkaBox.Api</RootNamespace>
         <Company>YlibkaBox.Api</Company>
         <Product>YlibkaBox.Api</Product>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
